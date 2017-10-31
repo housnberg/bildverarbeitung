@@ -7,6 +7,5 @@ function [ img ] = my_loadImage( filename )
  %convert double
  Idouble = I2./255.0
  [img] = Idouble
-
 end
 
