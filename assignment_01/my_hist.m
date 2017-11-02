@@ -3,7 +3,10 @@ function [ hist ] = my_hist( imgGray )
 %Remember your image contains double values between [0-1].
 %You might want to convert it back to uint8 values between [0-255].
 
-imgGray = uint8(imgGray.*255);
+%imgGray = uint8(imgGray.*255);
+if (isinteger(imgGray) == 0)
+    imgGray = uint8(imgGray.*255);
+end
 
 [height, width] = size(imgGray);
 histogram = zeros(256, 1);

@@ -9,18 +9,19 @@ imgGray = uint8(imgGray .* 255);
 [height, width] = size(imgGray);
 
 equalized = zeros(256, 1);
-
 for i = 1:size(aHist)
     equalized(i) = round(aHist(i) * 255);
 end
 
-for r = 1:height
-    for c = 1:width
-        imgGray(r, c) = equalized(imgGray(r, c) + 1);
+imgEq = uint8(zeros(height, width));
+
+for i = 1:height
+    for j = 1:width
+        imgEq(i, j) = equalized(imgGray(i, j) + 1);
     end
 end
 
-imgHE = imgGray;
+
+imgHE = imgEq;
 
 end
-
