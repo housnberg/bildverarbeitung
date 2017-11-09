@@ -11,10 +11,10 @@ img1 = my_loadImage(imgFile1);
 %% exercise 04a mean filter
 %parameter for testing your code
 w0 = 5;
-%meanImg0 = my_meanFilter(img0,w0);
+meanImg0 = my_meanFilter(img0,w0);
 
 figure;
-%imshow(meanImg0);
+imshow(meanImg0);
 
 solution_04a(img0,w0);
 
