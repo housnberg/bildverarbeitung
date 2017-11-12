@@ -3,31 +3,38 @@ function [ fimg ] = my_meanFilter( img, w )
 %   Detailed explanation goes here
 
 fimg = zeros(size(img));
-imgr = img(:,:,1);
-imgg = img(:,:,2);
-imgb = img(:,:,3);
-
-r=(w-1)/2;
-
-%padarray adds zeros on all sides (both)
-img = padarray(img,[2 2],'both');
 [height, width] = size(img);
-for x=1+r:height-r
-    for y=1+r:width-r
-        sumr=0;
-        sumb=0;
-        sumg=0;
-        sum=0;
-        for y1=y-r:y-r
-            for x1=x-r:x-r
-%                 sum = sum+img(x1,y1);
-                 sumr = sumr+imgr(x1,y1);
-                 sumg = sumg+imgg(x1,y1);
-                 sumb = sumb+imgb(x1,y1);
-            end
+
+for i = 1 : height
+    for j = 1 : width
+        row1 = i - w;
+        row2 = i + w;
+        column1 = j - w;
+        column2 = j + w;
+        if row1 < 1
+           row1 = 1; 
         end
-        fimg(x-r,y-r) = sumr/(r*r)+sumg/(r*r)+sumb/(r*r);
+        if column1 < 1
+           column1 = 1; 
+        end
+        if row2 > height
+            row2 = height;
+        end
+        if column2 > width
+            column2 = width;
+        end
+        kernel = img(row1 : row2, column1 : column2);
+        fimg(i, j) = mean(kernel(:));
     end
 end
+
+%{
+for i = 1+w : height-w  
+  for j = 1+w : width-w
+    kernel = img(i-w : i+w, j-w : j+w);
+    fimg(i, j) = mean(kernel(:));
+  end
+end
+%}
 
 end
