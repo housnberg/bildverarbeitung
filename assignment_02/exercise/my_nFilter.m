@@ -1,18 +1,24 @@
 function [ fimg ] = my_nFilter( img0,img1,img2,img3,img4 )
 %MY_NFILTER Summary of this function goes here
-    fimg = zeros(size(img0));
+%   Detailed explanation goes here
+%{
+    Patrick Greher
+    Sueleyman Coskun
+    Eugen Ljavin
+%}
+    fimg = (img0 + img1 + img2 + img3 + img4) ./ 5;
 
-    [height, width] = size(img0);
+%{
+    Bei dem Tassen-Bild handelt es sich um ein statatisches Foto.
+    Alle 5 Fotos mit dem Tassen Motiv sind deckungsgleich.
     
-    for i=1:height
-        for l=1:width
-            fimg(i,l) = (img0(i,l)+img1(i,l)+img2(i,l)+img3(i,l)+img4(i,l))/5;
-        end
-    end
-	
-%	fimg = (img0 + img1 + img2 + img3 + img4) ./ 5;
-%  Detailed explanation goes here
-%   Calculates the average of every pixel by summing up the values and divide by the amount of elements
+    Die Bilder mit den Blättern unterscheiden sich hingegen (wenn auch nur
+    minimal), da sich die Blätter von Foto zu Foto bewegen. Summiert man
+    nun die Pixel auf und errechnet den durchschnitt, entsteht eine Art
+    "Bewegungsunschärfe". Diese Methode eignet sich deswegen weniger, wenn
+    Bilder nicht deckungsgleich sind, weil sie z.B. nicht mit einem Stativ
+    aufgenommen wurden oder sich das Motiv bewegt.
+%}
 
-     
+
 end

@@ -1,6 +1,11 @@
 function [ fimg ] = my_gaussFilter( img, w , sigma )
 %MY_GAUSSFILTER Summary of this function goes here
 %   Detailed explanation goes here
+%{
+    Patrick Greher
+    Sueleyman Coskun
+    Eugen Ljavin
+%}
 
 fimg = zeros(size(img));
 
@@ -15,5 +20,5 @@ for i = 1+w : height-w
     fimg(i, j) = sum(conv(:));
   end
 end
-    
+
 end

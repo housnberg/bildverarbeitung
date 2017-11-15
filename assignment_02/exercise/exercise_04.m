@@ -20,7 +20,7 @@ solution_04a(img0,w0);
 
 %%
 %choose the best parameters for the image
-w1 = 0;
+w1 = 1;
 meanImg1 = my_meanFilter(img1,w1);
 
 figure;
@@ -42,7 +42,7 @@ imshow(medianImg0);
 solution_04b(img0,w0);
 %%
 %choose the best parameters for the image
-w1 = 0;
+w1 = 1;
 
 medianImg1 = my_medianFilter(img1,w1);
 
@@ -56,8 +56,8 @@ close all;
 
 %parameter for testing your code
 
-w0 = 5;
-sigma0= 3.0;
+w0 = 1;
+sigma0= 0.6;
 
 gaussImg0 = my_gaussFilter(img0,w0, sigma0);
 

@@ -1,6 +1,11 @@
 function [ fimg ] = my_medianFilter( img, w )
 %MY_MEDIANFILTER Summary of this function goes here
 %   Detailed explanation goes here
+%{
+    Patrick Greher
+    Sueleyman Coskun
+    Eugen Ljavin
+%}
 
 fimg = zeros(size(img));
 [height, width] = size(img);
@@ -24,7 +29,14 @@ for i = 1 : height
             column2 = width;
         end
         kernel = img(row1 : row2, column1 : column2);
-        fimg(i, j) = median(kernel(:));
+        sortedKernelAsArray = sort(kernel(:));
+     
+        fimg(i, j) = sortedKernelAsArray(int16((size(kernel, 1) * size(kernel, 1) / 2) + 0.5));
+        
+        %{
+            or simply use this to improve performance:
+            fimg(i, j) = median(kernel(:));
+        %}
     end
 end
 

@@ -1,6 +1,11 @@
 function [ fimg ] = my_meanFilter( img, w )
 %MY_MEANFILTER Summary of this function goes here
 %   Detailed explanation goes here
+%{
+    Patrick Greher
+    Sueleyman Coskun
+    Eugen Ljavin
+%}
 
 fimg = zeros(size(img));
 [height, width] = size(img);
@@ -24,7 +29,12 @@ for i = 1 : height
             column2 = width;
         end
         kernel = img(row1 : row2, column1 : column2);
-        fimg(i, j) = mean(kernel(:));
+        fimg(i, j) = sum(kernel(:)) / (size(kernel, 1) * size(kernel, 1));
+        
+        %{
+            or simply use this to improve performance:
+            fimg(i, j) = mean(kernel(:));
+        %}
     end
 end
 
@@ -38,3 +48,4 @@ end
 %}
 
 end
+
