@@ -3,6 +3,7 @@ function [ dft ] = my_idft1D( f )
 %   Detailed explanation goes here
 
   dft = zeros(size(f));
+  dft = ifft(f);
 
 end
 
