@@ -4,5 +4,8 @@ function [ nf ] = my_add1DNoise( f )
 
     nf = zeros(size(f));
     
+    z = randn(size(f)) / 15;
+    nf = f + z;
+    
 end
 
