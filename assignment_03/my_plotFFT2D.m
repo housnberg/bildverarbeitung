@@ -3,11 +3,13 @@ function my_plotFFT2D( img , figName)
 %   Detailed explanation goes here
 
 %{
-    displayfft2 creates a diagram which shows the available frequencies
-    (low and high). It also shows a smaller magnitude for higher
-    frequencies
-    You can also see there are  two dominationg directions (vertically and
-    horizontally through center) 
+    displayfft2 erzeugt ein Diagram, das alle vorhandenen Frequenzen zeigt.
+    Je heller ein Pixel im Diagram ist, desto höher ist die Frequenz.
+    Die tieferen Frequenzen sind in der Mitte des Diagrams dargestellt und
+    stärker vertreten als die höheren Frequenzen, deren Pixel dunkler sind.
+    Zudem sind in dem Diagram zwei dominierende Richtungen erkennbar, die
+    duch die Kanten des weißen Quadrates auf dem schwarzen Hintergrund
+    entstehen.
 %}
 
 figure('name', figName);
