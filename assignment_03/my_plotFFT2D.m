@@ -3,7 +3,11 @@ function my_plotFFT2D( img , figName)
 %   Detailed explanation goes here
 
 %{
-    displayfft2 creates a diagram which shows 
+    displayfft2 creates a diagram which shows the available frequencies
+    (low and high). It also shows a smaller magnitude for higher
+    frequencies
+    You can also see there are  two dominationg directions (vertically and
+    horizontally through center) 
 %}
 
 figure('name', figName);
