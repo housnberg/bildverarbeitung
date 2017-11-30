@@ -3,11 +3,11 @@ function [ dft ] = my_dft1D( f )
 %   Detailed explanation goes here
   
 dft = zeros(size(f));
-ln=length(f);
+lngth = length(f);
 
-for k=0:ln-1
-    for n=0:ln-1
-        dft(k+1) = dft(k+1) + (f(n+1)*exp((-1i)*2*pi*k*n/ln));
+for k=0:lngth-1
+    for n=0:lngth-1
+        dft(k+1) = dft(k+1) + (f(n+1)*exp((-1i)*2*pi*k*n/lngth));
     end
 end
 

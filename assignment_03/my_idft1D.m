@@ -3,14 +3,14 @@ function [ dft ] = my_idft1D( f )
 %   Detailed explanation goes here
 
 dft = zeros(size(f));
-ln=length(f);
+lngth = length(f);
 
-for n=0:ln-1
-    for k=0:ln-1
-        dft(n+1)=dft(n+1)+(f(k+1)*exp(1i*2*pi*k*n/ln));
+for n=0:lngth-1
+    for k=0:lngth-1
+        dft(n+1)=dft(n+1)+(f(k+1)*exp(1i*2*pi*k*n/lngth));
     end
 end
 
-dft=dft./ln;
+dft = dft./lngth;
 end
 
