@@ -10,6 +10,9 @@ function my_plotFFT2D( img , figName)
     Zudem sind in dem Diagram zwei dominierende Richtungen erkennbar, die
     duch die Kanten des weißen Quadrates auf dem schwarzen Hintergrund
     entstehen.
+
+    Quelle: http://matlabgeeks.com/tips-tutorials/how-to-do-a-2-d-fourier-transform-in-matlab/
+            http://web.archive.org/web/20130513181427id_/http://sharp.bu.edu/~slehar/fourier/fourier.html#filtering
 %}
 
 figure('name', figName);

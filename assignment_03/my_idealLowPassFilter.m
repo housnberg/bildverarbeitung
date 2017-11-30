@@ -27,8 +27,11 @@ function [ lpimg ] = my_idealLowPassFilter( img,maxFrequency )
         end
     end
     
+    %
     x(indices_x)=x(indices_x)-height;
     y(indices_y)=y(indices_y)-width;
+    
+    
     [X,Y]=meshgrid(x,y);
     filter=sqrt(X.^2+Y.^2)<=maxFrequency;
 
