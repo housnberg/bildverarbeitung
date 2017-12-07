@@ -5,7 +5,15 @@ function [ gimg, ftKernel ] = my_box2DFFT( img, w )
     
     is = size(img);
     ftKernel = zeros([is(1), is(2)]);
-    gimg = zeros(is);
+    
+    kernelSize = 2 * w + 1;
+    ftKernel(1:kernelSize, 1:kernelSize) = 1 / (kernelSize * kernelSize);
+    
+    ftImg = fft2(img);
+    ftKernel = fft2(ftKernel);
+    
+    gimg = ftImg.*ftKernel;
+    gimg = ifft2(gimg);
     
 end
 
