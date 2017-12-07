@@ -14,6 +14,7 @@ function [ gimg, ftKernel ] = my_box2DFFT( img, w )
     
     gimg = ftImg.*ftKernel;
     gimg = ifft2(gimg);
+
     
 end
 
