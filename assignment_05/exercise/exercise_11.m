@@ -31,8 +31,8 @@ solution_11c(img, sigma0, sigma1, threshold );
 %% exercise 11d canny (matlab) edge detection
 img = rgb2gray(double(imread('peppers.png'))/255);
 
-threshL = 0;
-threshH = 0;
+threshL = 0.035;
+threshH = 0.075;
 Gcanny = my_cannyEdge(img, threshL, threshH);
 
 %% present results

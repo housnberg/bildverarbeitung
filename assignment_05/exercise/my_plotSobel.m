@@ -20,4 +20,5 @@ function my_plotSobel( img )
     subplot(2, 2, 4);
     imshow(Gy);
     title('Gy')
+    
 end
