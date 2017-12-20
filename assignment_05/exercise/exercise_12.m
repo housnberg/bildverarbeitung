@@ -2,7 +2,7 @@ clear;
 close all;
 
 %% exercise 12 hough transformation
-img = (double(imread('../data/Coins.jpg'))/255);
+img = (double(imread('assignment_05/data/Coins.jpg'))/255);
 gimg = rgb2gray(img);
 
 %% exercise 12a
@@ -11,7 +11,7 @@ B = my_edgeDetection(gimg);
 %% exercise 12b
 % list of different circle sizes (radius)
 %fill the list with suitable values
-circleSizes = [ 100,80,60,40,20];
+circleSizes = [ 47, 55, 57, 65, 75 ];
 
 %calculate hough spaces (matrix) for the circle sizes
 hSpaces = my_houghTransform(B, circleSizes);
