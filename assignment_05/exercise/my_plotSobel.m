@@ -4,7 +4,7 @@ function my_plotSobel( img )
 
     [G, Gx, Gy] = my_sobelEdge(img);
 
-    figure('name', 'Sobel Filter');
+    figure('name', 'Result');
     subplot(2, 2, 1);
     imshow(img);
     title('img')  

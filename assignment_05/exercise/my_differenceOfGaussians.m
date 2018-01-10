@@ -1,7 +1,7 @@
 function [ dog ] = my_differenceOfGaussians( img, sigma0, sigma1 )
 %MY_DIFFERENCEOFGAUSSAINS Summary of this function goes here
 %   Detailed explanation goes here
-    kernelSize = 5;
+    kernelSize = [25,25];
 
     kernelGaussian1 = fspecial('gaussian', kernelSize, sigma0);
     kernelGaussian2 = fspecial('gaussian', kernelSize, sigma1);
