@@ -4,13 +4,5 @@ function [ G ] = my_cannyEdge( img, threshL, threshH )
     
     G = edge(img, 'Canny', [threshL threshH]);
    
-    %TODO: Entfernen. nur zur veranschaulichung!
-    figure;
-    imshow(G);
-    title('Filtered Image');
-    
-    figure;
-    imshow(img);
-    title('Filtered Image');
 end
 

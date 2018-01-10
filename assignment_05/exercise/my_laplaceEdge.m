@@ -2,7 +2,6 @@ function [ G ] = my_laplaceEdge( img )
 %MY_LAPLACEEDGE Summary of this function goes here
 %   Detailed explanation goes here
     
-    %TODO: Evtl. in Frequenzraum überführen
     G = zeros(size(img));
     img = padarray(img, [1, 1]);
     
@@ -14,11 +13,6 @@ function [ G ] = my_laplaceEdge( img )
             G(i, j) = sum(sum(kernel.*img(i:i+2, j:j+2)));
         end
     end
-  
-    %TODO: Entfernen. nur zur veranschaulichung!
-    figure;
-    imshow(G);
-    title('Filtered Image');
     
 end
 

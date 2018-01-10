@@ -1,32 +1,22 @@
 function my_plotHoughSpaces( B, hSpaces, circleSizes )
 %MY_EDGEDETECTION Summary of this function goes here
 %   Detailed explanation goes here
-  
-    radius = 'r=';
-
+    
     figure('name', 'Hough Spaces');
     subplot(2, 3, 1);
     imshow(B);
-    title('coins')  
+    title('coins');
 
-    subplot(2, 3, 2);
-    %hSpaces(1)
-    title([radius, circleSizes(1)])  
-    
-    subplot(2, 3, 3);
-    %hSpaces(2)
-    title(['r=', circleSizes(2)]) 
-
-    subplot(2, 3, 4);
-    %hSpaces(3)
-    title([radius, circleSizes(3)]) 
-    
-    subplot(2, 3, 5);
-    %hSpaces(4)
-    title([radius, circleSizes(4)]) 
-    
-    subplot(2, 3, 6);
-    %hSpaces(5)
-    title([radius, circleSizes(5)]) 
+    for i=1:size(circleSizes, 2)
+        pos=i+1;
+        subplot(2, 3, pos);
+        pcolor(hSpaces(:, :, i));
+        set(gca,'Ydir','reverse')
+        colormap(jet);
+        shading interp;
+        axis([0 size(B, 2) 0 size(B, 1)]);
+        daspect([1 1 1]);
+        title(['r=', num2str(circleSizes(i))])
+    end
     
 end
