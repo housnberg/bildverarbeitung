@@ -1,10 +1,11 @@
-function [ DoGimg, Gmh  ] = my_marrhildrethEdge( img, sigma0, sigma1, threshold )
+function [ DoGimg, Gmh  ] = my_marrhildrethEdge( img, sigma0, sigma1 )
 %MY_LAPLACEEDGE Summary of this function goes here
 %   Detailed explanation goes here
     
     %1. Apply Difference of Gaussians (DoG)
     DoGimg = my_differenceOfGaussians(img, sigma0, sigma1);
-    
+    size(img)
+    size(DoGimg)
     %2. Calculate zero-crossing
     Gmh = zeros(size(DoGimg));
     for x=2:size(DoGimg,1)-1

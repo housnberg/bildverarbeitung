@@ -2,7 +2,7 @@ clear;
 close all;
 
 %% exercise 12 hough transformation
-img = (double(imread('assignment_05/data/Coins.jpg'))/255);
+img = (double(imread('../data/Coins.jpg'))/255);
 gimg = rgb2gray(img);
 
 %% exercise 12a
