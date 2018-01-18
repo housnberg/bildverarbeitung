@@ -13,12 +13,10 @@ B = my_edgeDetection(gimg);
 %fill the list with suitable values
 circleSizes = [ 47, 55, 57, 65, 75 ];
 
-%calculate hough spaces (matrix) for the circle sizes
 hSpaces = my_houghTransform(B, circleSizes);
 
 %% exercise 12c
-
-%plot the houghspaces
+%plot the hughspaces
 my_plotHoughSpaces(B,hSpaces,circleSizes);
 
 solution_12c(gimg,circleSizes);

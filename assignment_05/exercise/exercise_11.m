@@ -21,14 +21,6 @@ img = rgb2gray(double(imread('peppers.png'))/255);
 sigma0 = 20;
 sigma1 = 8;
 
-%Gaus Kantenlänge 25
-%Zero Crossing:
-%Ränder auslassen, 2 verschachtelte Schleifen. Alle Werte um das Pixel
-%vergleichen (Sign Funktion verwenden)
-%Spezialfälle an Kanten abdecken:
-%Falls Nullduchgang -> nur den Nächsten beachten (Betrag der Werte von
-%einander abziehen)
-
 [ DoGimg, Gmarr  ]= my_marrhildrethEdge(img, sigma0, sigma1);
 
 plotMarrhildreth( img, sigma0, sigma1 );
