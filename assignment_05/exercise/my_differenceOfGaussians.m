@@ -4,7 +4,7 @@ function [ dog ] = my_differenceOfGaussians( img, sigma0, sigma1 )
 
     ks = 25;
     kernelSize = [ks,ks];
-    mod = (ks-1)/2
+    mod = (ks-1)/2;
     img1 = padarray(img,[mod mod],0,'both');
     
     
