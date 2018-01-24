@@ -4,6 +4,14 @@ function [ error ] = my_imageDifference( src, tar, tx, ty )
 
     %These initializations are only to make execution possible.
     %+++!!!Please replace it with your own code!!!+++
-    error = 0;
+    
+       %pyramide 1 verschieben und unterschied zu pyramide 0
+       %berechnen
+       n = numel(src);
+       a = circshift(tar,[tx,ty]);
+       error = sum(abs(src(:) - a(:)))/n;
+       if error == 0
+           error = Inf(1);
+       end
 end
 

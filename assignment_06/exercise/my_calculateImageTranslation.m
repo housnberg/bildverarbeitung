@@ -3,30 +3,21 @@ function [ tx,ty ] = my_calculateImageTranslation( pyramid0, pyramid1, levels )
 %   Detailed explanation goes here
     %align images in scale space
      
-    tx = 0;
-    ty = 0;
+    tx = 0; %  müsste 69 als Ergebnis haben
+    ty = 0; %  müsste -7 als Ergebnis haben
     e = Inf(1);
-    j = levels;
-    for i=1:levels
-        for x=(tx-1):(tx+1)
+    while (levels>0)
+       for x=(tx-1):(tx+1)
             for y=(ty-1):(ty+1)
-               %pyramide 1 verschieben und unterschied zu pyramide 0
-               %berechnen
-               a = circshift(pyramid1{j},[x,y]);
-               e_tmp = sum(pyramid0{j}(:) - a(:));
-               if e_tmp == 0
-                   e_tmp = Inf(1);
-               end
-               %Prüfen ob neuer Fehler geringer ist, falls ja verschiebung
-               %übernehmen
-               if e_tmp < e
+                e_tmp = my_imageDifference(pyramid0{levels},pyramid1{levels}, tx,ty);
+                if e_tmp < e
                    e = e_tmp;
-                   tx = tx+x;
-                   ty = ty+y;
+                   tx = x;
+                   ty = y;
                end
             end
-        end
-       j = j-1;
+       end
+       levels = levels - 1;
     end
 
 end
