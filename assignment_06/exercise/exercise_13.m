@@ -4,16 +4,16 @@ clear;
 %{
 a)
     anzahl levels mittels zweier log
-    für jedes level
+    fï¿½r jedes level
         my_gaussianLevel bild berechnen und der jeweiligen Zelle zuweisen
-        Filtergröße 3*Sigma + 1, fspecial, imfilter (evtl. direkt gauss filter)
+        Filtergrï¿½ï¿½e 3*Sigma + 1, fspecial, imfilter (evtl. direkt gauss filter)
         jedes zweite x und y, um das kleinere Bild zu bekommen
 
 b)
     wie lassen sich die bilder aufeinanderlegen? --> PYRAMIDE hilfreich
     beim kleinsten Level anfangen
-    bei keiner überlappung --> infinity als fehlerwert
-    normieren mittels anzahl an pixel, die sich überlappen
+    bei keiner ï¿½berlappung --> infinity als fehlerwert
+    normieren mittels anzahl an pixel, die sich ï¿½berlappen
     verschieben der pixel mit +-1 in x und y schieben
     faktor als offset, verschiebung ausprobieren
 
