@@ -7,8 +7,8 @@ function [ pyramid, levels ] = my_gaussianPyramid( img )
     %+++!!!Please replace it with your own code!!!+++
     levels = log(512)/log(2);
     ks = [2,2];
-    sigma = 8;
-    gf = fspecial('gaussian',ks, 3*sigma+1);
+    sigma = 4;
+    gf = fspecial('gaussian',ks, sigma);
     pyramid = cell(1,levels);
     for i=1:levels
         if i > 1            
@@ -17,7 +17,8 @@ function [ pyramid, levels ] = my_gaussianPyramid( img )
             img = img_h;
         end
         pyramid{i} = img;
-        img = imfilter(img,gf);
+        %img = imfilter(img,gf);
+        img = imgaussfilt(img,2);
     end
     
 

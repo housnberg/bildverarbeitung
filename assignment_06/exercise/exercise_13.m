@@ -31,6 +31,7 @@ imgt = double(imread('../data/transformed.jpg'))/255.0;
 
 my_plotImagePyramids(pyramido,pyramidt,floor(levelso/2), 1);
 
+
 my_plotImagePyramids(pyramido,pyramidt,levelso, floor(levelso/2)+1);
 
 solution_13a(imgo,imgt);
@@ -44,6 +45,11 @@ solution_13b(imgo,imgt);
 
 %% exercise 13c blending  images
 
+   %da b) nicht funktioniert
+   tx = 68;
+   ty = -7;
+   
+   
  bimg = my_blendResults( imgo, imgt, tx, ty );
  
  figure;
